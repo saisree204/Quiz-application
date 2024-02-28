@@ -1,0 +1,31 @@
+# quiz
+questions = ("1. What type of data does the 'len()'function retun?: ",
+             "2. How a code block indicated in python?: ",  
+             "3. which of following types of loops are not supported in python?: ",             
+             "4. which of the following is not a walid variable name in python?: ",)
+
+options = (("A. Float", "B. String", "C. Integer", "D. List"),
+           ("A. Brackets", "B.Indentation", "C. Key", "D. None of the above"), 
+           ("A. for", "B. while", "C. do-while", "D. None of those"),
+           ("A. my_variable", "B. 1variable", "C. -variable", "D. variable1"))
+
+answers = ("B","B","C","C")
+guesses = []
+score = 0
+question_num = 0
+
+for question in questions:
+    print("---------------------------------------------------")
+    print(question)
+    for option in options[question_num]:
+        print(option)
+
+    guess = input("Enter (A,B,C,D): ").upper()
+    guesses.append(guess)
+    if guess == answers[question_num]:
+        score += 1
+        print("CORRECT!")
+    else:
+        print("INCORECCT!")
+        print(f"{answers[question_num]} is the correct answer")
+    question_num += 1
